@@ -1,0 +1,30 @@
+﻿@* File: Views/Shared/_Layout.cshtml *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - CMCS Wireframe</title>
+    <link rel="stylesheet" href="~/css/wireframe.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">CMCS — WIREFRAME</div>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Claims" asp-action="Submit">Submit Claim</a>
+            <a asp-controller="Claims" asp-action="Approvals">Approvals</a>
+            <a asp-controller="Claims" asp-action="Upload">Upload Docs</a>
+            <a asp-controller="Claims" asp-action="Status">Claim Status</a>
+        </nav>
+    </header>
+
+    <aside class="banner">Prototype preview only — controls are disabled; no data is saved.</aside>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

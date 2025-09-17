@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ApprovalListItem>
+<section class="card">
+    <h2>Approvals Queue (Wireframe)</h2>
+    <table>
+        <thead>
+            <tr><th>Claim</th><th>Lecturer</th><th>Period</th><th>Stage</th><th>Status</th><th>Hours</th><th>Amount</th><th>Action</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>#@c.ClaimId</td>
+                    <td>@c.Lecturer</td>
+                    <td>@c.Period</td>
+                    <td>@c.Stage</td>
+                    <td><span class="chip">@c.Status</span></td>
+                    <td>@c.TotalHours</td>
+                    <td>ZAR @c.TotalAmount</td>
+                    <td>
+                        <button class="disabled" disabled>Verify</button>
+                        <button class="disabled" disabled>Approve</button>
+                        <button class="disabled" disabled>Return</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

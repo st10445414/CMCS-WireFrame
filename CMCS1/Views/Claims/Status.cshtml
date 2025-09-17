@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ClaimStatusItem>
+<section class="card">
+    <h2>Claim Status (Wireframe)</h2>
+    <div class="status-grid">
+        @foreach (var s in Model)
+        {
+            <article class="status-card">
+                <header>
+                    <h3>Claim #@s.ClaimId — @s.Period</h3>
+                    <span class="chip">@s.Status</span>
+                </header>
+                <p><small>Updated @s.LastUpdated.ToString("yyyy-MM-dd")</small></p>
+                @if (!string.IsNullOrWhiteSpace(s.Comment))
+                {
+                    <p><em>@s.Comment</em></p>
+                }
+                <ol class="timeline">
+                    <li class="done">Draft</li>
+                    <li class="done">Submitted</li>
+                    <li>Under Review</li>
+                    <li>Approved</li>
+                    <li>Settled</li>
+                </ol>
+            </article>
+        }
+    </div>
+</section>
